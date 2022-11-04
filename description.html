@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Description</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/description.css" />
+</head>
+<body>
+<div id="app">
+    <header>
+        <a href="./index.html">Index</a>
+        <a href="./introduction.html">Introduction</a>
+        <a href="./description.html">Species Description</a>
+        {{ count }}
+    </header>
+    <main>
+        Description
+    </main>
+</div>
+
+<script src="./js/vue-2.7.12.js"></script>
+<script>
+	new Vue({
+		data() {
+			return {
+				count: 0
+			}
+		},
+		computed: {},
+		mounted () {
+			setTimeout(() => this.count = 10, 3000)
+		},
+		methods: {
+
+		}
+	}).$mount("#app")
+</script>
+
+</body>
+</html>
