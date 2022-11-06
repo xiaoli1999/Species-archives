@@ -28,7 +28,64 @@
 	new Vue({
 		data() {
 			return {
-				count: 0
+				dateIndex: 0,
+				dateNameArr: ['Day', 'Week', 'Month', 'Year'],
+                dateData: [
+					// Day
+					[
+						{
+							no: '01',
+                            image: '',
+                            name: 'Day',
+                            number: 162,
+                            time: '12/09/2022'
+                        }
+                    ],
+					// Week
+					[
+						{
+							no: '01',
+							image: '',
+							name: 'Week',
+							number: 162,
+							time: '12/09/2022'
+						}
+					],
+					// Month
+					[
+						{
+							no: '01',
+							image: '',
+							name: 'Month',
+							number: 162,
+							time: '12/09/2022'
+						}
+					],
+					// Year
+					[
+						{
+							no: '01',
+							image: '',
+							name: 'Year',
+							number: 162,
+							time: '12/09/2022'
+						}
+					],
+                ],
+				logData: [
+					{
+						no: '01',
+						name: 'Month',
+						time: '12/09/2022',
+						location: '111',
+
+
+
+
+
+                        total: 25
+					}
+				]
 			}
 		},
 		computed: {},
