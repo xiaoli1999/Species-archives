@@ -10,7 +10,19 @@
 </head>
 <body>
 <div id="app">
-   介绍页
+    <header>
+        <div class="title">Home</div>
+        <div class="nav">
+            <a class="active" href="./home.html">Home</a>
+            <a href="./archive.html">Archive</a>
+            <a href="./support.html">Support</a>
+        </div>
+    </header>
+    <main>
+        <div class="left">左侧区域</div>
+        <div class="center">中心区域</div>
+        <div class="right">右侧区域</div>
+    </main>
 </div>
 
 <script src="./js/vue-2.7.12.js"></script>
@@ -18,13 +30,13 @@
 	new Vue({
 		data() {
 			return {
-				count: 0
+                count: 0
 			}
 		},
-		computed: {},
-		mounted () {
+        computed: {},
+        mounted () {
 			setTimeout(() => this.count = 10, 3000)
-		},
+        },
 		methods: {
 
 		}
