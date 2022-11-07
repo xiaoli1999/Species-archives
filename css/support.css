@@ -1,12 +1,13 @@
 main {
   height: calc(100vh - 84px);
-  margin: 42px 32px 56px;
+  margin: 42px 32px 0;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 main .content {
+  position: relative;
   width: calc(50% - 9px);
   height: 100%;
   display: flex;
@@ -20,14 +21,16 @@ main .content .content-title {
   font-weight: 900;
   letter-spacing: 0.88px;
   color: #000000;
+  flex-shrink: 0;
 }
 main .content .content-image {
-  flex: 1;
-  height: 100%;
   box-sizing: border-box;
   background: #f7f7f7;
   padding: 32px 64px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 100px);
   overflow: hidden;
 }
 main .content .content-image .content-image-nav {
@@ -46,10 +49,12 @@ main .content .content-image .content-image-nav {
   letter-spacing: 0.88px;
   border: 1px solid #000000;
   overflow: hidden;
+  flex-shrink: 0;
 }
 main .content .content-image .content-image-nav > div {
   width: 50%;
   color: #000;
+  cursor: pointer;
 }
 main .content .content-image .content-image-nav > div.active {
   background: #000;
@@ -57,11 +62,44 @@ main .content .content-image .content-image-nav > div.active {
 }
 main .content .content-image .content-image-img {
   width: 100%;
-  height: calc(100% - 46px);
+  height: 100%;
+  overflow: hidden;
 }
 main .content .content-image .content-image-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+main .content .content-image-left {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: calc(50% - 24px);
+  right: 10px;
+  bottom: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+main .content .content-image-left.disabled {
+  transform: rotate(180deg);
+}
+main .content .content-image-right {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 10px;
+  top: calc(50% - 24px);
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+main .content .content-image-right.disabled {
+  transform: rotate(360deg);
+}
+@media screen and (max-width: 1441px) {
+  header {
+    height: 64px;
+  }
 }
 /*# sourceMappingURL=support.css.map */

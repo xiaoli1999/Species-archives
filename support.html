@@ -23,29 +23,35 @@
             <div class="content-title">Sound  capture  device</div>
             <div class="content-image">
                 <div class="content-image-nav">
-                    <div :class="imgIndex1 === 0 ? 'active' : ''">operation photos</div>
-                    <div :class="imgIndex1 === 1 ? 'active' : ''">schematic</div>
+                    <div :class="imgIndex1 === 0 ? 'active' : ''" @click="imgIndex1 = 0">operation photos</div>
+                    <div :class="imgIndex1 === 1 ? 'active' : ''" @click="imgIndex1 = 1">schematic</div>
                 </div>
                 <div class="content-image-img">
                     <img src="./img/support/1.png" alt="">
                 </div>
-<!--                <img class="content-image-left" src="./img/arrow-disabled.png" alt="">-->
-<!--                <img class="content-image-right" src="./img/arrow.png" alt="">-->
             </div>
+            <img v-if="imgIndex2 === 0" class="content-image-left" src="./img/arrow.png" alt="">
+            <img v-else class="content-image-left disabled" src="./img/arrow-disabled.png" alt="">
+
+            <img v-if="imgIndex2 === 0" class="content-image-right" src="./img/arrow.png" alt="">
+            <img v-else class="content-image-right disabled" src="./img/arrow-disabled.png" alt="">
         </div>
         <div class="content">
             <div class="content-title">register  button</div>
             <div class="content-image">
                 <div class="content-image-nav">
-                    <div :class="imgIndex2 === 0 ? 'active' : ''">operation photos</div>
-                    <div :class="imgIndex2 === 1 ? 'active' : ''">schematic</div>
+                    <div :class="imgIndex2 === 0 ? 'active' : ''" @click="imgIndex2 = 0">operation photos</div>
+                    <div :class="imgIndex2 === 1 ? 'active' : ''" @click="imgIndex2 = 1">schematic</div>
                 </div>
                 <div class="content-image-img">
                     <img src="./img/support/1.png" alt="">
                 </div>
-<!--                <img class="content-image-left" src="./img/arrow-disabled.png" alt="">-->
-<!--                <img class="content-image-right" src="./img/arrow.png" alt="">-->
             </div>
+            <img v-if="imgIndex2 === 10" class="content-image-left" src="./img/arrow.png" alt="">
+            <img v-else class="content-image-left disabled" src="./img/arrow-disabled.png" alt="">
+
+            <img v-if="imgIndex2 === 10" class="content-image-right" src="./img/arrow.png" alt="">
+            <img v-else class="content-image-right disabled" src="./img/arrow-disabled.png" alt="">
         </div>
     </main>
 </div>
@@ -55,11 +61,13 @@
 	new Vue({
 		data() {
 			return {
+				tab1: 0,
 				imgIndex1: 0,
                 imgList1: [
 					[],
                     []
                 ],
+				tab2: 0,
 				imgIndex2: 0,
 				imgList2: [
 					[],
@@ -69,8 +77,8 @@
 		},
 		computed: {},
 		mounted () {
-			this.screenAuto()
-			window.onresize = () => this.screenAuto()
+			// this.screenAuto()
+			// window.onresize = () => this.screenAuto()
 		},
 		deleted () {
 			window.onresize = null;

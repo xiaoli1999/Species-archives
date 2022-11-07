@@ -42,7 +42,7 @@ main {
         }
 
         .date {
-            height: 478px;
+            height: 38vh;
             padding: 0 24px;
             background: rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(8px);
@@ -63,7 +63,7 @@ main {
             }
 
             .date-content {
-                height: 436px;
+                height: calc(38vh - 42px);
                 overflow-y: auto;
                 font-family: SourceHanSansCN-Regular;
                 font-size: 12px;
@@ -109,7 +109,7 @@ main {
         }
 
         .log {
-            height: 310px;
+            height: 35.4vh;
             padding: 0 24px;
             background: rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(8px);
@@ -130,7 +130,7 @@ main {
             }
 
             .log-content {
-                height: 274px;
+                height: calc(35.4vh - 36px);
                 overflow-y: auto;
                 font-family: SourceHanSansCN-Regular;
                 font-size: 12px;
@@ -161,12 +161,16 @@ main {
     }
 
     .image {
-        max-width: 1154px;
-        max-height: 898px;
+        width: 100%;
+        height: calc(100vh - 158px);
+        margin-left: 90px;
+        overflow: hidden;
 
         > img {
             width: 100%;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }
+
