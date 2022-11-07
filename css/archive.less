@@ -1,0 +1,172 @@
+main {
+    display: flex;
+    justify-content: space-between;
+
+    .content {
+        width: 608px;
+        height: 100%;
+
+        .date-nav {
+            width: 298px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            border-radius: 8px 8px 0 0;
+            background: rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+
+            > div {
+                width: 25%;
+                height: 42px;
+                text-align: center;
+                line-height: 42px;
+                font-family: AlibabaSans-Regular;
+                font-size: 16px;
+                letter-spacing: 0.88px;
+                color: #666666;
+                border-radius: 8px 8px 0 0;
+                overflow: hidden;
+                transition: all .24s;
+                cursor: pointer;
+
+                &:hover {
+                    color: #000;
+                }
+
+                &.active {
+                    color: #000;
+                    background: linear-gradient(180deg, rgba(0,0,0,0.24) 0%, rgba(0,0,0,0.08) 100%);
+                }
+            }
+        }
+
+        .date {
+            height: 478px;
+            padding: 0 24px;
+            background: rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(8px);
+            text-align: center;
+
+            .date-title {
+                height: 42px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-family: AlibabaSans-Regular;
+                font-size: 14px;
+                font-weight: normal;
+                letter-spacing: 0.88px;
+                color: #000000;
+                border-bottom: 1px solid #000000;
+            }
+
+            .date-content {
+                height: 436px;
+                overflow-y: auto;
+                font-family: SourceHanSansCN-Regular;
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 14px;
+                letter-spacing: 0.88px;
+                border-radius: 4px;
+                color: #000000;
+
+                > div {
+                    height: 72px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                }
+
+                > div:last-child {
+                    border: 0;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+        }
+
+        .log-nav {
+            width: 128px;
+            height: 42px;
+            text-align: center;
+            line-height: 42px;
+            border-radius: 8px 8px 0 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.24) 0%, rgba(0,0,0,0.06) 100%);
+            backdrop-filter: blur(10px);
+            margin-top: 26px;
+        }
+
+        .log {
+            height: 310px;
+            padding: 0 24px;
+            background: rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(8px);
+            text-align: center;
+
+            .log-title {
+                height: 36px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-family: AlibabaSans-Regular;
+                font-size: 14px;
+                font-weight: normal;
+                letter-spacing: 0.88px;
+                color: #000000;
+                border-bottom: 1px solid rgba(0, 0, 0, .12);
+            }
+
+            .log-content {
+                height: 274px;
+                overflow-y: auto;
+                font-family: SourceHanSansCN-Regular;
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 14px;
+                letter-spacing: 0.88px;
+                border-radius: 4px;
+                color: #000000;
+
+                > div {
+                    height: 36px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 1px solid rgba(0, 0, 0, .08);
+                }
+
+                > div:last-child {
+                    border: 0;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .image {
+        max-width: 1154px;
+        max-height: 898px;
+
+        > img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}

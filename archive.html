@@ -19,7 +19,53 @@
         </div>
     </header>
     <main>
-        Archive
+        <div class="content">
+            <div class="date-nav">
+                <div v-for="(item, index) in dateNameArr" :key="index" :class="dateIndex === index ? 'active' : 0" @click="dateIndex = index">{{ item }}</div>
+            </div>
+            <div class="date">
+                <div class="date-title">
+                    <div style="width: 80px;">No.</div>
+                    <div style="width: 50px;">Image</div>
+                    <div style="width: 80px;">Name</div>
+                    <div style="width: 120px;">Number of uses</div>
+                    <div style="width: 120px;">Time</div>
+                </div>
+                <div class="date-content">
+                    <div v-for="(item, index) in 20" :key="index">
+                        <div style="width: 80px;">{{ item >=10 ? item : `0${item}`}}</div>
+                        <div style="width: 50px;">
+                            <img src="./img/archive/logo.png" alt="">
+                        </div>
+                        <div style="width: 80px;">Lucky</div>
+                        <div style="width: 120px;">162</div>
+                        <div style="width: 120px;">12/09/2022</div>
+                    </div>
+                </div>
+            </div>
+            <div class="log-nav">data log</div>
+            <div class="log">
+                <div class="log-title">
+                    <div style="width: 80px;">No.</div>
+                    <div style="width: 120px;">Name of button</div>
+                    <div style="width: 120px;">Time</div>
+                    <div style="width: 120px;">Location</div>
+                    <div style="width: 80px;">Total</div>
+                </div>
+                <div class="log-content">
+                    <div v-for="(item, index) in 20" :key="index">
+                        <div style="width: 80px;">{{ item >=10 ? item : `0${item}`}}</div>
+                        <div style="width: 120px;">Ghost</div>
+                        <div style="width: 120px;">05/11/2023</div>
+                        <div style="width: 120px;">Forest Restaurant</div>
+                        <div style="width: 80px;">25</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="./img/archive.png" alt="">
+        </div>
     </main>
 </div>
 
@@ -78,22 +124,32 @@
 						name: 'Month',
 						time: '12/09/2022',
 						location: '111',
-
-
-
-
-
                         total: 25
 					}
-				]
+				],
+                img: ''
 			}
 		},
 		computed: {},
 		mounted () {
-			setTimeout(() => this.count = 10, 3000)
+			this.screenAuto()
+            window.onresize = () => this.screenAuto()
+			setTimeout(() => this.img = './img/1.jpg', 3000)
+		},
+		deleted () {
+			window.onresize = null;
 		},
 		methods: {
-
+            screenAuto () {
+				const designDraftWidth = 1920;//设计稿的宽度
+				const designDraftHeight = 960;//设计稿的高度
+				//根据屏幕的变化适配的比例
+				const scale = document.documentElement.clientWidth / document.documentElement.clientHeight < designDraftWidth / designDraftHeight ?
+					(document.documentElement.clientWidth / designDraftWidth) :
+					(document.documentElement.clientHeight / designDraftHeight);
+				//缩放比例
+				document.querySelector('#app').style.transform = `scale(${scale}) translate(-50%)`;
+            }
 		}
 	}).$mount("#app")
 </script>
